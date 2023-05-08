@@ -28,7 +28,7 @@ class ISnapshotMergeStats {
     virtual ~ISnapshotMergeStats() = default;
     // Called when merge starts or resumes.
     virtual bool Start() = 0;
-    virtual void set_state(android::snapshot::UpdateState state) = 0;
+    virtual void set_state(android::snapshot::UpdateState state, bool using_compression) = 0;
     virtual void set_boot_complete_time_ms(uint32_t ms) = 0;
     virtual void set_boot_complete_to_merge_start_time_ms(uint32_t ms) = 0;
     virtual void set_merge_failure_code(MergeFailureCode code) = 0;
